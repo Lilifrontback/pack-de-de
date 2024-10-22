@@ -6,3 +6,4 @@
 /phpunit.xml
 /vendor/
 test_db
+/tests

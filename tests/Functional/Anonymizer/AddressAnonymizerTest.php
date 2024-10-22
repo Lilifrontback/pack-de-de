@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DbToolsBundle\PackFrFR\Tests\Functional\Anonymizer;
+namespace DbToolsBundle\PackDeDE\Tests\Functional\Anonymizer;
 
 use MakinaCorpus\DbToolsBundle\Anonymization\Config\AnonymizationConfig;
 use MakinaCorpus\DbToolsBundle\Anonymization\Anonymizator;
@@ -59,7 +59,7 @@ class AddressAnonymizerTest extends FunctionalTestCase
         $config->add(new AnonymizerConfig(
             'table_test',
             'data',
-            'fr-fr.address',
+            'de-de.address',
             new Options([
                 'street_address' => 'my_street_address',
                 'secondary_address' => 'my_secondary_address',

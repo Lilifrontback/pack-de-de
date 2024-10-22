@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DbToolsBundle\PackFrFR\Tests\Unit\Anonymizer;
+namespace DbToolsBundle\PackDeDE\Tests\Unit\Anonymizer;
 
-use DbToolsBundle\PackFrFR\Anonymizer\PhoneNumberAnonymizer;
+use DbToolsBundle\PackDeDE\Anonymizer\PhoneNumberAnonymizer;
 use MakinaCorpus\DbToolsBundle\Anonymization\Anonymizer\Options;
 use MakinaCorpus\DbToolsBundle\Test\UnitTestCase;
 

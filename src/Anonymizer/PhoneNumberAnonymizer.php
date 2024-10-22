@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DbToolsBundle\PackFrFR\Anonymizer;
+namespace DbToolsBundle\PackDeDE\Anonymizer;
 
 use MakinaCorpus\DbToolsBundle\Anonymization\Anonymizer\AbstractAnonymizer;
 use MakinaCorpus\DbToolsBundle\Attribute\AsAnonymizer;
@@ -28,9 +28,9 @@ use MakinaCorpus\QueryBuilder\Query\Update;
  */
 #[AsAnonymizer(
     name: 'phone',
-    pack: 'fr-fr',
+    pack: 'de-de',
     description: <<<TXT
-    Anonymize with a random fictional french phone number.
+    Anonymize with a random fictional german phone number.
     You can choose if you want a "landline" or a "mobile" phone number with option 'mode'
     TXT
 )]
@@ -48,7 +48,10 @@ class PhoneNumberAnonymizer extends AbstractAnonymizer
             $this->getSetIfNotNullExpression(
                 $expr->concat(
                     match ($this->options->get('mode', 'mobile')) {
-                        'mobile' => '063998',
+                        // les numéros mobiles commencent soit par 015 , 016 , 017
+                        'mobile' => '018',
+                        // 0190 /0139 : Ces indicatifs ont été utilisés par le passé pour des services spéciaux comme les lignes d'information ou les numéros surtaxés, mais ils ne sont plus attribués depuis 2003
+                        // 0137 /0138 : Ces indicatifs n'ont jamais été attribués et ne pas utilisés.
                         'landline' => '026191',
                         default => throw new \InvalidArgumentException('"mode" option can be "mobile", "landline"'),
                     },
