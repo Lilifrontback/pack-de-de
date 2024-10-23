@@ -7,3 +7,4 @@
 /vendor/
 test_db
 /tests
+/test_ db.sqlite

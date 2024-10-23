@@ -9,17 +9,13 @@ use MakinaCorpus\DbToolsBundle\Attribute\AsAnonymizer;
 use MakinaCorpus\QueryBuilder\Query\Update;
 
 /**
- * Anonymize french telephone numbers.
+ * Anonymize german telephone numbers.
  *
  * This will create phone number with reserved prefixes for fiction and tests:
- *   - 01 99 00 XX XX
- *   - 02 61 91 XX XX
- *   - 03 53 01 XX XX
- *   - 04 65 71 XX XX
- *   - 05 36 49 XX XX
- *   - 06 39 98 XX XX
+ *   - 018 XX XX XX XX (mobile)
+ *   - 0 137 XXX XXX (landline)
  *
- * Under the hood, it will simple send basic strings such as: 0639980000 with
+ * Under the hood, it will simple send basic strings such as: "018123456789" with
  * trailing 0's randomly replaced with something else. Formating may be
  * implemented later.
  *
@@ -48,14 +44,14 @@ class PhoneNumberAnonymizer extends AbstractAnonymizer
             $this->getSetIfNotNullExpression(
                 $expr->concat(
                     match ($this->options->get('mode', 'mobile')) {
-                        // les numéros mobiles commencent soit par 015 , 016 , 017
+                        // Mobile numbers start either with 015, 016, 017
                         'mobile' => '018',
-                        // 0190 /0139 : Ces indicatifs ont été utilisés par le passé pour des services spéciaux comme les lignes d'information ou les numéros surtaxés, mais ils ne sont plus attribués depuis 2003
-                        // 0137 /0138 : Ces indicatifs n'ont jamais été attribués et ne pas utilisés.
-                        'landline' => '026191',
+                        // 0190/0139: These prefixes were used in the past for special services like information lines or premium-rate numbers, but they have not been assigned since 2003
+                        // 0137/0138: These prefixes have never been assigned and are not used.
+                        'landline' => '0137',
                         default => throw new \InvalidArgumentException('"mode" option can be "mobile", "landline"'),
                     },
-                    $expr->lpad($this->getRandomIntExpression(9999), 4, '0')
+                    $expr->lpad($this->getRandomIntExpression(9999), 6, '0')
                 ),
             )
         );

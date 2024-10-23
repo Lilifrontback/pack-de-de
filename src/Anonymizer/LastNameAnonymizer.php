@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DbToolsBundle\PackFrFR\Anonymizer;
+namespace DbToolsBundle\PackDeDE\Anonymizer;
 
 use MakinaCorpus\DbToolsBundle\Anonymization\Anonymizer\AbstractEnumAnonymizer;
 use MakinaCorpus\DbToolsBundle\Attribute\AsAnonymizer;
@@ -58,8 +58,7 @@ class LastNameAnonymizer extends AbstractEnumAnonymizer
             "Köhler",
             "Walter",
             "Schmitz",
-            "
-            Schneider",
+            "Schneider",
             "Berger",
             "Herrmann",
             "Schuster",
