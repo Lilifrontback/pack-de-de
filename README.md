@@ -8,6 +8,7 @@ This pack provides:
 * `de-de..lastname`: Anonymize with a random german last names from a sample of ~500 items
 * `de-de..phone`: Anonymize german telephone numbers, (only option is `mode`: `mobile` or `landline`)
 * `de-de.secu`: Anonymize german social security numbers 
+* `de-de.cb` : Anonymize credit card numbers with a sample of 40 items
 
 ## Installation
 
