@@ -9,9 +9,9 @@ use MakinaCorpus\DbToolsBundle\Attribute\AsAnonymizer;
 
 #[AsAnonymizer(
     name: 'lastname',
-    pack: 'fr-fr',
+    pack: 'de-de',
     description: <<<TXT
-    Anonymize with a random french last names from a sample of ~500 items.
+    Anonymize with a random german last names from a sample of ~500 items.
     TXT
 )]
 class LastNameAnonymizer extends AbstractEnumAnonymizer
