@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DbToolsBundle\PackDeDE\Anonymizer;
@@ -38,7 +39,7 @@ class SocialSecurityNumber extends AbstractAnonymizer
                 $expr->concat(
                     $expr->lpad($this->getRandomIntExpression(99), 2, '0'),
                     '13',
-                    $expr->lpad($this->getRandomIntExpression(999999999), 4 , '0'),
+                    $expr->lpad($this->getRandomIntExpression(999999999), 4, '0'),
                     $expr->lpad($randomLetter, 1),
                     $expr->lpad($this->getRandomIntExpression(999), 3, '0'),
                 )

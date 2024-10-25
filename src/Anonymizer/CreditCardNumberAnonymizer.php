@@ -22,8 +22,8 @@ class CreditCardNumberAnonymizer extends AbstractEnumAnonymizer
     protected function getSample(): array
     {
         return [
-           
-"4111 1111 1111 1112", 
+
+"4111 1111 1111 1112",
 "4111 1111 1111 1112" ,
 "4111 1111 1111 1112" ,
 "4111 1111 1111 1113",
@@ -66,5 +66,5 @@ class CreditCardNumberAnonymizer extends AbstractEnumAnonymizer
 "6011 0000 0000 0009",
 "6011 0000 0000 0010",
 ];
-}
+    }
 }
